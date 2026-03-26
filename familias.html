@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Campus Verano 2026 - U.D. Jinámar & SM Academia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --udj-navy: #001F3F; 
+            --udj-white: #FFFFFF; 
+            --mec-yellow: #FFCC00; 
+            --text-dark: #222222;
+            --text-light: #666666;
+            --bg-light: #F9FBFC;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--udj-white); 
+            color: var(--text-dark); 
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--udj-navy) 40%, #003366 100%);
+            color: var(--udj-white);
+            padding: 8rem 1.5rem 6rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.1; font-weight: 800; }
+        .hero h1 span { color: var(--mec-yellow); }
+        .hero p { font-size: 1.2rem; font-weight: 300; max-width: 700px; margin: 0 auto 2.5rem; opacity: 0.95; }
+        
+        .btn-cta {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: var(--mec-yellow);
+            color: var(--udj-navy);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: 0.3s all ease;
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+            font-size: 1.1rem;
+        }
+        .btn-cta:hover { 
+            transform: scale(1.05);
+            background-color: var(--udj-white);
+        }
+
+        /* --- Pilares MEC --- */
+        section { padding: 4rem 1.5rem; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.2rem; color: var(--udj-navy); margin-bottom: 3rem; }
+
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pillar-card {
+            background: var(--bg-light);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border-bottom: 5px solid var(--udj-navy);
+        }
+        .pillar-card h3 { color: var(--udj-navy); margin: 1rem 0; }
+
+        /* --- Sección Formulario y QR --- */
+        .enrollment { text-align: center; background-color: var(--bg-light); border-radius: 50px 50px 0 0; }
+        .qr-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .qr-box img { max-width: 180px; height: auto; display: block; margin: 0 auto 1rem; }
+
+        footer {
+            background-color: var(--udj-navy);
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Campus Verano 2026: Entrena tu <span>Éxito</span></h1>
+            <p>U.D. Jinámar & SM Academia presentan el campus más completo de Gran Canaria. Metodología MEC, tecnificación y valores.</p>
+            <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta" target="_blank">Inscribirse Ahora</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Nuestra Metodología MEC</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>Motivación</h3>
+                    <p>Hacemos que cada entrenamiento sea el mejor momento de su día.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Esfuerzo</h3>
+                    <p>Enseñamos que el trabajo diario es la base del crecimiento deportivo.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Constancia</h3>
+                    <p>Hábitos sólidos para formar mejores jugadores y personas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="enrollment">
+        <div class="container">
+            <h2 class="section-title">Reserva tu plaza</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-light);">Escanea el código o pulsa el botón para acceder al formulario oficial.</p>
+            
+            <div class="qr-box">
+                <img src="1000641861.jpg" alt="QR Inscripción">
+                <p style="font-size: 0.8rem; font-weight: 600;">ESCANEAME</p>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta" target="_blank" style="background-color: var(--udj-navy); color: white;">Ir al Formulario Directo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>U.D. JINÁMAR & SM ACADEMIA</strong></p>
+            <p>Cancha de Fútbol de Jinámar, Telde. 2026.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
