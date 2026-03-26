@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria Técnica: Campus Verano 2026 - U.D. Jinámar & SM Academia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gov: #003366; /* Azul Institucional/Gobierno */
+            --secondary-gov: #0056a3; /* Azul Acción */
+            --accent-gov: #f1c40f; /* Amarillo MEC / Contraste */
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-paper: #FFFFFF;
+            --bg-side: #f4f7f9;
+            --border-color: #d1d9e0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            background-color: var(--bg-side); 
+            color: var(--text-main); 
+            line-height: 1.8;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- Sidebar de Navegación --- */
+        .sidebar {
+            width: 280px;
+            background-color: var(--primary-gov);
+            color: var(--white);
+            padding: 2rem 1rem;
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            border-right: 4px solid var(--accent-gov);
+        }
+
+        .sidebar-header { text-align: center; margin-bottom: 3rem; }
+        .sidebar-header h1 { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: #fff; text-transform: uppercase; }
+        .sidebar-header p { font-size: 0.8rem; color: rgba(255,255,255,0.7); font-weight: 300; }
+
+        .nav-links { list-style: none; flex-grow: 1; }
+        .nav-links li { margin-bottom: 0.5rem; }
+        .nav-links a {
+            display: block;
+            padding: 0.8rem 1rem;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--accent-gov);
+            padding-left: 1.5rem;
+        }
+
+        .sidebar-footer { text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+        /* --- Contenido Principal --- */
+        .main-content { margin-left: 280px; flex: 1; background: var(--bg-paper); }
+        
+        header.doc-header {
+            background-color: var(--bg-paper);
+            padding: 3rem 4rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .doc-header h2 { font-family: 'Oswald', sans-serif; font-size: 1.8rem; color: var(--primary-gov); }
+        .doc-header .doc-meta { text-align: right; font-size: 0.85rem; color: var(--text-light); }
+
+        /* --- Secciones de la Memoria --- */
+        .section { padding: 4rem; border-bottom: 1px solid #eee; }
+        .section:last-child { border-bottom: none; }
+        
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            color: var(--primary-gov);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            border-left: 5px solid var(--accent-gov);
+            padding-left: 1rem;
+        }
+
+        .section-content h3 { font-size: 1.1rem; color: var(--text-main); margin: 1.5rem 0 0.5rem; }
+        .section-content p { margin-bottom: 1rem; font-weight: 300; font-size: 1rem; text-align: justify;}
+        .section-content ul { list-style: none; margin-bottom: 1.5rem; }
+        .section-content ul li { 
+            position: relative; 
+            padding-left: 1.5rem; 
+            margin-bottom: 0.5rem; 
+            font-weight: 300;
+        }
+        .section-content ul li::before { 
+            content: '✓'; 
+            position: absolute; 
+            left: 0; 
+            color: var(--secondary-gov); 
+            font-weight: bold; 
+        }
+
+        /* --- Tablas y Cards Específicas --- */
+        .schedule-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+        .schedule-table th { background-color: var(--primary-gov); color: #fff; padding: 1rem; text-align: left; }
+        .schedule-table td { padding: 0.8rem 1rem; border-bottom: 1px solid #eee; font-weight: 300;}
+        .schedule-table tr:nth-child(even) { background-color: #fcfcfc; }
+
+        .price-card {
+            background: var(--bg-side);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .price-info h3 { margin: 0; font-size: 1.2rem; }
+        .price-info p { margin: 0; font-size: 0.85rem; color: var(--text-light); }
+        .price-value { font-size: 2.2rem; font-weight: 700; color: var(--primary-gov); }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .sidebar { width: 80px; padding: 2rem 0.5rem; text-align: center;}
+            .sidebar-header h1, .sidebar-header p, .nav-links a span, .sidebar-footer { display: none; }
+            .nav-links a { font-size: 1.2rem; padding: 1rem; }
+            .main-content { margin-left: 80px; }
+            header.doc-header, .section { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h1>Memoria Técnica</h1>
+            <p>Campus U.D. Jinámar 2026</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#justificacion" class="active"><span>1. Justificación</span></a></li>
+            <li><a href="#objetivos"><span>2. Objetivos</span></a></li>
+            <li><a href="#metodologia"><span>3. Metodología MEC</span></a></li>
+            <li><a href="#operativo"><span>4. Programa Operativo</span></a></li>
+            <li><a href="#seguridad"><span>5. Seguridad (LOPIVI)</span></a></li>
+            <li><a href="#social"><span>6. Impacto Social</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>SM Academia & U.D. Jinámar</p>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        
+        <header class="doc-header">
+            <div>
+                <h2>Proyecto Institucional de Intervención</h2>
+            </div>
+            <div class="doc-meta">
+                <p><strong>Referencia:</strong> CAMPUS-UDJ-2026</p>
+                <p><strong>Fecha:</strong> Julio 2026</p>
+                <p><strong>Estado:</strong> Propuesta Formal</p>
+            </div>
+        </header>
+
+        <section id="justificacion" class="section">
+            <h3 class="section-title">1. Presentación y Justificación</h3>
+            <div class="section-content">
+                <p>El presente proyecto detalla la organización y ejecución del <strong>Campus de Verano U.D. Jinámar</strong>, gestionado técnica y operativamente por <strong>SM Academia</strong>. </p>
+                <p>En un contexto donde el ocio estival debe ser una herramienta de conciliación familiar y formación en valores, nuestra propuesta se aleja del modelo de "guardería deportiva" para ofrecer un programa de <strong>Tecnificación de Alto Rendimiento y Educación en Valores</strong> basado en la Metodología MEC.</p>
+            </div>
+        </section>
+
+        <section id="objetivos" class="section">
+            <h3 class="section-title">2. Objetivos Estratégicos</h3>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Promoción de Hábitos Saludables:</strong> Combatir el sedentarismo juvenil mediante la práctica deportiva intensiva y una nutrición controlada (desayunos saludables).</li>
+                    <li><strong>Formación Integral:</strong> Utilizar el fútbol como vehículo para transmitir competencias transversales (disciplina, trabajo en equipo y resiliencia).</li>
+                    <li><strong>Conciliación Familiar:</strong> Ofrecer un entorno seguro y profesional a las familias del municipio durante el periodo no lectivo.</li>
+                    <li><strong>Inclusión Social:</strong> Garantizar el acceso preferente a los jóvenes deportistas de la zona de Jinámar, fortaleciendo el tejido asociativo local.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="metodologia" class="section">
+            <h3 class="section-title">3. Marco Metodológico: Modelo MEC</h3>
+            <div class="section-content">
+                <p>La intervención pedagógica se estructura bajo tres pilares fundamentales, garantizando que el desarrollo deportivo vaya parejo al humano:</p>
+                <ul>
+                    <li><strong>[M] Motivación:</strong> Dinámicas de grupo orientadas a la autoconfianza y la cohesión. El monitor actúa como motor de energía.</li>
+                    <li><strong>[E] Esfuerzo:</strong> Cultura de superación personal y valorización del trabajo diario por encima del resultado inmediato.</li>
+                    <li><strong>[C] Constancia:</strong> Desarrollo de hábitos de disciplina, puntualidad y respeto estricto a las normas y horarios establecidos.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="operativo" class="section">
+            <h3 class="section-title">4. Programa Operativo y Sesión Tipo</h3>
+            <div class="section-content">
+                <p>El campus se desarrolla de lunes a viernes, en horario de <strong>09:00 a 13:00 horas</strong>. A continuación se detalla el cronograma de actividad técnica:</p>
+                
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Horario</th>
+                            <th>Bloque de Actividad</th>
+                            <th>Descripción Técnica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>09:00 - 09:10</td><td>Recepción</td><td>Control de Asistencia Digital y Activación Motivacional.</td></tr>
+                        <tr><td>09:10 - 10:30</td><td>Bloque I: Tecnificación</td><td>Desarrollo de habilidades motrices y gesto técnico individual.</td></tr>
+                        <tr><td>10:30 - 11:00</td><td>Pausa Nutricional</td><td>Hidratación, Desayuno Saludable y Charla Formativa de Valores.</td></tr>
+                        <tr><td>11:00 - 12:00</td><td>Bloque II: Táctica Aplicada</td><td>Acciones combinativas, rondos tácticos y situaciones reales de juego.</td></tr>
+                        <tr><td>12:00 - 12:50</td><td>Bloque III: Competición</td><td>Competición reglada interna premiando la aplicación de los valores MEC.</td></tr>
+                        <tr><td>12:50 - 13:00</td><td>Cierre de Jornada</td><td>Recogida y entrega supervisada según protocolo de seguridad.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="seguridad" class="section">
+            <h3 class="section-title">5. Seguridad y Cumplimiento Legal (LOPIVI)</h3>
+            <div class="section-content">
+                <p>SM Academia garantiza el estricto cumplimiento de la normativa vigente en materia de protección de datos y menores:</p>
+                <ul>
+                    <li><strong>Certificación Técnica:</strong> Todo el personal técnico cuenta con el <strong>Certificado Negativo de Delitos de Naturaleza Sexual</strong>, revisado y validado por la Dirección.</li>
+                    <li><strong>Protección del Menor (LOPIVI):</strong> Aplicación rigorosa de la Ley Orgánica 8/2021, estableciendo protocolos de custodia, prevención de riesgos e intervenciones.</li>
+                    <li><strong>Cobertura de Seguros:</strong> Pólizas vigentes de Responsabilidad Civil y Seguro de Accidentes Deportivo con cobertura completa para todos los participantes.</li>
+                    <li><strong>Privacidad de Datos (RGPD):</strong> Tratamiento conforme a la ley de todos los datos de carácter personal y gestión ética de los derechos de imagen del menor.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="social" class="section">
+            <h3 class="section-title">6. Impacto Social y Tarifas Bonificadas</h3>
+            <div class="section-content">
+                <p>Con el objetivo de facilitar el acceso al deporte de calidad en el municipio y bonificar a los deportistas locales, se han establecido las siguientes cuotas:</p>
+                
+                <div class="price-card">
+                    <div class="price-info">
+                        <h3>Tarifa Bonificada (Mes Completo)</h3>
+                        <p>Aplicable a jugadores U.D. Jinámar y alumnos activos SM Fútbol.</p>
+                    </div>
+                    <div class="price-value">180€</div>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-info">
+                        <h3>Tarifa Bonificada (Semanal)</h3>
+                        <p>Aplicable a jugadores U.D. Jinámar y alumnos activos SM Fútbol.</p>
+                    </div>
+                    <div class="price-value">45€</div>
+                </div>
+
+                <p style="font-size: 0.85rem; color: #888; font-style: italic; margin-top: 2rem;">*Nota: La tarifa general para participantes externos se sitúa en 200 €/mes o 50 €/semanales.</p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+              </html>
+
