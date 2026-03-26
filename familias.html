@@ -14,97 +14,104 @@
             --bg-light: #F9FBFC;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--udj-white); color: var(--text-dark); line-height: 1.7; }
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--udj-white); color: var(--text-dark); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
         
-        .hero { 
-            background: linear-gradient(135deg, var(--udj-navy) 40%, #003366 100%); 
-            color: var(--udj-white); 
-            padding: 6rem 1.5rem; 
-            text-align: center; 
-        }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--udj-navy) 40%, #003366 100%); color: var(--udj-white); padding: 5rem 1.5rem; text-align: center; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; line-height: 1.1; }
         .hero h1 span { color: var(--mec-yellow); }
-        .hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-
-        .btn-cta { 
-            display: inline-block; 
-            padding: 1.2rem 2.5rem; 
-            background-color: var(--mec-yellow); 
-            color: var(--udj-navy); 
-            text-decoration: none; 
-            font-weight: 700; 
-            border-radius: 50px; 
-            transition: 0.3s; 
-            margin-top: 2rem; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
+        
+        .btn-cta { display: inline-block; padding: 1.2rem 2.5rem; background-color: var(--mec-yellow); color: var(--udj-navy); text-decoration: none; font-weight: 700; border-radius: 50px; transition: 0.3s; margin-top: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .btn-cta:hover { transform: scale(1.05); background: white; }
 
-        section { padding: 4rem 1.5rem; max-width: 1000px; margin: 0 auto; text-align: center; }
-        
-        .qr-container { 
-            background: var(--bg-light); 
-            padding: 2.5rem; 
-            border-radius: 20px; 
-            display: inline-block; 
-            margin: 2rem 0; 
-            border: 2px dashed #ccc; 
-        }
-        .qr-container img { 
-            max-width: 220px; 
-            height: auto; 
-            border-radius: 10px; 
-            display: block;
-            margin: 0 auto;
-        }
-        .qr-label { margin-top: 15px; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; color: var(--udj-navy); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem; }
+        .section-title { text-align: center; color: var(--udj-navy); margin-bottom: 2rem; font-size: 2rem; border-bottom: 3px solid var(--mec-yellow); display: inline-block; }
 
-        .mec-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
-        .mec-item { padding: 1.5rem; border: 1px solid #eee; border-radius: 10px; }
-        .mec-item h3 { color: var(--udj-navy); margin-bottom: 0.5rem; }
+        /* Tarifas */
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .price-card { background: var(--bg-light); padding: 2.5rem; border-radius: 15px; border: 1px solid #ddd; text-align: center; position: relative; }
+        .discount-badge { position: absolute; top: -10px; right: -10px; background: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        .price-card h3 { color: var(--udj-navy); margin-bottom: 1rem; }
+        .price-value { font-size: 3rem; font-weight: 800; color: var(--udj-navy); display: block; }
+        .price-card p { font-size: 0.9rem; color: #555; font-weight: 400; margin-top: 10px; }
 
-        footer { background: var(--udj-navy); color: white; padding: 2rem; text-align: center; font-size: 0.8rem; margin-top: 4rem; }
+        /* Sesión */
+        .schedule-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .schedule-table th { background: var(--udj-navy); color: white; padding: 1.2rem; text-align: left; }
+        .schedule-table td { padding: 1rem; border-bottom: 1px solid #eee; }
+
+        /* QR */
+        .qr-section { background: var(--bg-light); padding: 3rem 1.5rem; text-align: center; border-radius: 50px 50px 0 0; }
+        .qr-box { background: white; padding: 2rem; border-radius: 20px; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .qr-box img { max-width: 200px; height: auto; display: block; margin: 0 auto 1rem; }
+
+        footer { background: var(--udj-navy); color: white; padding: 2rem; text-align: center; font-size: 0.8rem; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <h1>Campus Verano 2026: Entrena tu <span>Éxito</span></h1>
-        <p>U.D. Jinámar & SM Academia. El campus de tecnificación líder con metodología MEC.</p>
-        <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta" target="_blank">Inscribirse Ahora</a>
+        <h1>Campus Verano 2026<br><span>Entrena tu Éxito</span></h1>
+        <p>Inscripciones abiertas para jugadores de la U.D. Jinámar y SM Fútbol</p>
+        <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta">Inscribirse Ahora</a>
     </header>
 
-    <section>
-        <h2>Reserva tu Plaza</h2>
-        <p>Garantiza el lugar de tu hijo/a escaneando el código o pulsando el botón.</p>
-        
-        <div class="qr-container">
-            <img src="qr-campus.jpg" alt="Código QR de Inscripción">
-            <p class="qr-label">ESCANEAME PARA INSCRIBIR</p>
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title">Tarifas Exclusivas</h2>
+        <div class="price-grid">
+            <div class="price-card">
+                <div class="discount-badge">-10% DTO.</div>
+                <h3>Mes Completo</h3>
+                <span class="price-value">180€</span>
+                <p><strong>Beneficio para:</strong><br>Jugadores U.D. Jinámar<br>Alumnos SM Fútbol</p>
+            </div>
+            <div class="price-card">
+                <div class="discount-badge">-10% DTO.</div>
+                <h3>Cuota Semanal</h3>
+                <span class="price-value">45€</span>
+                <p><strong>Beneficio para:</strong><br>Jugadores U.D. Jinámar<br>Alumnos SM Fútbol</p>
+            </div>
         </div>
+        <p style="font-size: 0.85rem; color: #888;">*Tarifa general para externos: 200€/mes o 50€/semanal.</p>
+    </div>
 
-        <br>
-        <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta" style="background: var(--udj-navy); color: white;" target="_blank">Abrir Formulario de Google</a>
+    <div class="container">
+        <h2 class="section-title" style="display: block; text-align: center;">Sesión Tipo (09:00 - 13:00)</h2>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Horario</th>
+                    <th>Actividad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>09:00 - 09:10</td><td><strong>Llegada:</strong> Recepción y activación motivacional.</td></tr>
+                <tr><td>09:10 - 10:30</td><td><strong>Tecnificación:</strong> Gesto técnico individual (Metodología MEC).</td></tr>
+                <tr><td>10:30 - 11:00</td><td><strong>Desayuno:</strong> Hidratación y charla de valores.</td></tr>
+                <tr><td>11:00 - 12:00</td><td><strong>Juegos Aplicados:</strong> Acciones combinativas y táctica.</td></tr>
+                <tr><td>12:00 - 12:50</td><td><strong>Partido Final:</strong> Competición interna y valores.</td></tr>
+                <tr><td>12:50 - 13:00</td><td><strong>Salida:</strong> Cierre y recogida segura.</td></tr>
+            </tbody>
+        </table>
+    </div>
 
-        <div class="mec-box">
-            <div class="mec-item">
-                <h3>Motivación</h3>
-                <p>Pasión por el aprendizaje diario.</p>
+    <section class="qr-section">
+        <div class="container">
+            <h2 class="section-title">Reserva tu Plaza</h2>
+            <p style="margin-bottom: 2rem;">Escanea el código o pulsa el botón para abrir el formulario oficial.</p>
+            <div class="qr-box">
+                <img src="qr-campus.jpg" alt="QR Inscripción">
+                <p style="font-size: 0.75rem; font-weight: bold; color: var(--udj-navy);">ESCANEAME PARA INSCRIBIR</p>
             </div>
-            <div class="mec-item">
-                <h3>Esfuerzo</h3>
-                <p>Superación en cada entrenamiento.</p>
-            </div>
-            <div class="mec-item">
-                <h3>Constancia</h3>
-                <p>Hábitos que forman personas.</p>
-            </div>
+            <br>
+            <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta" style="background: var(--udj-navy); color: white;">Ir al Formulario Directo</a>
         </div>
     </section>
 
     <footer>
-        <p>U.D. JINÁMAR & SM ACADEMIA - GESTIÓN ESTRATÉGICA 2026</p>
+        <p>U.D. JINÁMAR & SM ACADEMIA - 2026<br>Gestión de Formación Deportiva de Élite</p>
     </footer>
 
 </body>
