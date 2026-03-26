@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier de Patrocinio - Campus U.D. Jinámar 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #001F3F; /* Azul Marino U.D. Jinámar */
+            --secondary-white: #FFFFFF; /* Blanco Pureza */
+            --accent-silver: #F4F4F4; /* Gris Claro Fondo */
+            --text-black: #111111; /* Negro Texto Principal */
+            --text-gray: #555555; /* Gris Texto Secundario */
+            --hover-blue: #003366;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            background-color: var(--secondary-white); 
+            color: var(--text-black); 
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 60%, #002d5c 100%);
+            color: var(--secondary-white);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10vh;
+            background: var(--secondary-white);
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.1; }
+        .hero p { font-size: 1.2rem; font-weight: 300; max-width: 700px; margin: 0 auto 2rem; opacity: 0.9; }
+        
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--secondary-white);
+            color: var(--primary-navy);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn-primary:hover { background-color: var(--accent-silver); transform: translateY(-2px); }
+
+        /* --- Secciones Generales --- */
+        section { padding: 6rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        
+        .section-title { text-align: center; font-size: 2.5rem; color: var(--primary-navy); margin-bottom: 1rem; }
+        .section-subtitle { text-align: center; color: var(--text-gray); max-width: 600px; margin: 0 auto 4rem; font-weight: 300; }
+
+        /* --- Grid de Valor (3 columnas) --- */
+        .value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+        
+        .value-card {
+            background: var(--secondary-white);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+        .value-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-color: transparent; }
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-navy);
+        }
+
+        .value-card h3 { color: var(--primary-navy); font-size: 1.5rem; margin: 1.5rem 0 1rem; }
+        .value-card p { color: var(--text-gray); font-size: 0.95rem; font-weight: 300; }
+        
+        .icon-box {
+            font-size: 2.5rem;
+            color: var(--primary-navy);
+            background: var(--accent-silver);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        /* --- Sección Métricas (Gris Claro) --- */
+        .metrics { background-color: var(--accent-silver); color: var(--text-black); }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
+        .metric-item h2 { font-size: 4rem; color: var(--primary-navy); line-height: 1; }
+        .metric-item p { text-transform: uppercase; font-size: 0.85rem; font-weight: 700; color: var(--text-gray); letter-spacing: 1px; }
+
+        /* --- Sección Niveles (Azul Marino) --- */
+        .tiers { background-color: var(--primary-navy); color: var(--secondary-white); position: relative;}
+        .tiers .section-title { color: var(--secondary-white); }
+        .tiers .section-subtitle { color: rgba(255,255,255,0.7); }
+
+        .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start; }
+        
+        .tier-card {
+            background: rgba(255,255,255,0.05);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+        .tier-card:hover { background: rgba(255,255,255,0.1); border-color: var(--secondary-white); }
+        .tier-card.featured {
+            background: var(--secondary-white);
+            color: var(--text-black);
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .tier-card.featured h3, .tier-card.featured .price { color: var(--primary-navy); }
+
+        .tier-card h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .tier-card .price { font-size: 3rem; font-family: 'Oswald', sans-serif; font-weight: 700; margin-bottom: 2rem; display: block;}
+        
+        .tier-list { list-style: none; font-weight: 300; font-size: 0.95rem; margin-bottom: 3rem;}
+        .tier-list li { margin-bottom: 1rem; position: relative; padding-left: 1.5rem; }
+        .tier-list li::before { content: '✓'; position: absolute; left: 0; color: var(--hover-blue); font-weight: 700; }
+        .tier-card.featured .tier-list li::before { color: var(--primary-navy); }
+
+        /* --- Call to Action Final --- */
+        .cta { text-align: center; background-color: var(--secondary-white); }
+        .cta h2 { font-size: 2.5rem; color: var(--primary-navy); margin-bottom: 1rem; }
+        .cta p { color: var(--text-gray); max-width: 600px; margin: 0 auto 3rem; font-weight: 300; }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--text-black);
+            color: rgba(255,255,255,0.6);
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .tier-card.featured { transform: scale(1); margin: 1rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Impulse su Marca Asociándose a la Excelencia Deportiva</h1>
+            <p>Únase al Campus de Verano U.D. Jinámar & SM Academia. Una oportunidad única de impacto social y visibilidad corporativa en Gran Canaria.</p>
+            <a href="#contacto" class="btn-primary">Solicitar Dossier Ejecutivo</a>
+        </div>
+    </header>
+
+    <section id="propuesta">
+        <div class="container">
+            <h2 class="section-title">Una Alianza Estratégica</h2>
+            <p class="section-subtitle">Más que un patrocinio, una inversión en valores, juventud y comunidad.</p>
+            
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="icon-box">🏆</div>
+                    <h3>Visibilidad de Élite</h3>
+                    <p>Asocie su marca a la U.D. Jinámar, club histórico, y a SM Academia, referentes en formación integral y Metodología MEC.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon-box">🤝</div>
+                    <h3>Responsabilidad Social</h3>
+                    <p>Impacte directamente en el desarrollo de niños y jóvenes de la comunidad, fomentando hábitos saludables y valores.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon-box">📊</div>
+                    <h3>Retorno de Inversión</h3>
+                    <p>Acceso directo a las familias (público objetivo), presencia en medios digitales y eventos de clausura de alto perfil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="metrics">
+        <div class="container metrics-grid">
+            <div class="metric-item">
+                <h2>+100</h2>
+                <p>Participantes Directos</p>
+            </div>
+            <div class="metric-item">
+                <h2>+200</h2>
+                <p>Familias Impactadas</p>
+            </div>
+            <div class="metric-item">
+                <h2>4</h2>
+                <p>Semanas de Impacto</p>
+            </div>
+            <div class="metric-item">
+                <h2>MEC</h2>
+                <p>Metodología Propia</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tiers" id="niveles">
+        <div class="container">
+            <h2 class="section-title">Oportunidades de Patrocinio</h2>
+            <p class="section-subtitle">Estructuras flexibles diseñadas para cumplir sus objetivos de marketing.</p>
+            
+            <div class="tiers-grid">
+                <div class="tier-card">
+                    <h3>Partner Local</h3>
+                    <span class="price">Gris</span>
+                    <ul class="tier-list">
+                        <li>Logotipo en photocall de clausura.</li>
+                        <li>Mención expresa en redes sociales (1 post).</li>
+                        <li>Espacio para carpa/stand en evento final.</li>
+                        <li>2 Diplomas de agradecimiento corporativo.</li>
+                    </ul>
+                    <a href="#contacto" class="btn-primary" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid white;">Consultar</a>
+                </div>
+                <div class="tier-card featured">
+                    <h3>Official Sponsor</h3>
+                    <span class="price">Azul</span>
+                    <ul class="tier-list">
+                        <li><strong>Logotipo Preferente en Equipación Técnica.</strong></li>
+                        <li>Presencia fija en Banner Web Oficial.</li>
+                        <li>Campaña exclusiva en RRSS (3 posts + Video).</li>
+                        <li>Mención en Notas de Prensa y Medios.</li>
+                        <li>4 Invitaciones VIP a Clausura.</li>
+                    </ul>
+                    <a href="#contacto" class="btn-primary" style="background: var(--primary-navy); color: white;">Seleccionar Nivel</a>
+                </div>
+                <div class="tier-card">
+                    <h3>Naming Rights</h3>
+                    <span class="price">Elite</span>
+                    <ul class="tier-list">
+                        <li><strong>El Campus llevará el nombre de su Empresa.</strong></li>
+                        <li>Máxima visibilidad en todas las equipaciones.</li>
+                        <li>Exclusividad sectorial garantizada.</li>
+                        <li>Discurso principal en acto de Clausura.</li>
+                        <li>Estrategia de Branded Content compartida.</li>
+                    </ul>
+                    <a href="#contacto" class="btn-primary" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid white;">Contactar Dirección</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contacto">
+        <div class="container">
+            <h2>Hablemos de Negocios</h2>
+            <p>Estamos preparados para diseñar una propuesta a la medida de su empresa. Solicite una reunión con nuestra Dirección Estratégica.</p>
+            <a href="mailto:direccion@smacademia.com?subject=Interés Patrocinio Campus Jinámar" class="btn-primary" style="background-color: var(--primary-navy); color: white;">Agendar Reunión Ejecutivo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SM Academia & U.D. Jinámar. Todos los derechos reservados.</p>
+            <p style="font-size: 0.75rem; margin-top: 1rem;">Diseño Operativo y Estratégico para Entidades de Formación Deportiva de Élite.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
