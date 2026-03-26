@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripción Campus Verano 2026 - U.D. Jinámar & SM Academia</title>
+    <title>Inscripción Campus 2026 - U.D. Jinámar & SM Academia</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -11,98 +11,104 @@
             --udj-white: #FFFFFF; 
             --mec-yellow: #FFCC00; 
             --text-dark: #222222;
-            --text-light: #666666;
             --bg-light: #F9FBFC;
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--udj-white); color: var(--text-dark); line-height: 1.7; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
         
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            background-color: var(--udj-white); 
-            color: var(--text-dark); 
-            line-height: 1.7;
+        .hero { 
+            background: linear-gradient(135deg, var(--udj-navy) 40%, #003366 100%); 
+            color: var(--udj-white); 
+            padding: 6rem 1.5rem; 
+            text-align: center; 
         }
-
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* --- Hero Section --- */
-        .hero {
-            background: linear-gradient(135deg, var(--udj-navy) 40%, #003366 100%);
-            color: var(--udj-white);
-            padding: 8rem 1.5rem 6rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.1; font-weight: 800; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
         .hero h1 span { color: var(--mec-yellow); }
-        .hero p { font-size: 1.2rem; font-weight: 300; max-width: 700px; margin: 0 auto 2.5rem; opacity: 0.95; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+        .btn-cta { 
+            display: inline-block; 
+            padding: 1.2rem 2.5rem; 
+            background-color: var(--mec-yellow); 
+            color: var(--udj-navy); 
+            text-decoration: none; 
+            font-weight: 700; 
+            border-radius: 50px; 
+            transition: 0.3s; 
+            margin-top: 2rem; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn-cta:hover { transform: scale(1.05); background: white; }
+
+        section { padding: 4rem 1.5rem; max-width: 1000px; margin: 0 auto; text-align: center; }
         
-        .btn-cta {
-            display: inline-block;
-            padding: 1.2rem 2.5rem;
-            background-color: var(--mec-yellow);
-            color: var(--udj-navy);
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-radius: 50px;
-            transition: 0.3s all ease;
-            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
-            font-size: 1.1rem;
+        .qr-container { 
+            background: var(--bg-light); 
+            padding: 2.5rem; 
+            border-radius: 20px; 
+            display: inline-block; 
+            margin: 2rem 0; 
+            border: 2px dashed #ccc; 
         }
-        .btn-cta:hover { 
-            transform: scale(1.05);
-            background-color: var(--udj-white);
+        .qr-container img { 
+            max-width: 220px; 
+            height: auto; 
+            border-radius: 10px; 
+            display: block;
+            margin: 0 auto;
         }
+        .qr-label { margin-top: 15px; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; color: var(--udj-navy); }
 
-        /* --- Pilares MEC --- */
-        section { padding: 4rem 1.5rem; }
-        .container { max-width: 1000px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.2rem; color: var(--udj-navy); margin-bottom: 3rem; }
+        .mec-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+        .mec-item { padding: 1.5rem; border: 1px solid #eee; border-radius: 10px; }
+        .mec-item h3 { color: var(--udj-navy); margin-bottom: 0.5rem; }
 
-        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .pillar-card {
-            background: var(--bg-light);
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            border-bottom: 5px solid var(--udj-navy);
-        }
-        .pillar-card h3 { color: var(--udj-navy); margin: 1rem 0; }
-
-        /* --- Sección Formulario y QR --- */
-        .enrollment { text-align: center; background-color: var(--bg-light); border-radius: 50px 50px 0 0; }
-        .qr-box {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        .qr-box img { max-width: 180px; height: auto; display: block; margin: 0 auto 1rem; }
-
-        footer {
-            background-color: var(--udj-navy);
-            color: white;
-            padding: 3rem 1.5rem;
-            text-align: center;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-        }
+        footer { background: var(--udj-navy); color: white; padding: 2rem; text-align: center; font-size: 0.8rem; margin-top: 4rem; }
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <div class="container">
-            <h1>Campus Verano 2026: Entrena tu <span>Éxito</span></h1>
+        <h1>Campus Verano 2026: Entrena tu <span>Éxito</span></h1>
+        <p>U.D. Jinámar & SM Academia. El campus de tecnificación líder con metodología MEC.</p>
+        <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta" target="_blank">Inscribirse Ahora</a>
+    </header>
+
+    <section>
+        <h2>Reserva tu Plaza</h2>
+        <p>Garantiza el lugar de tu hijo/a escaneando el código o pulsando el botón.</p>
+        
+        <div class="qr-container">
+            <img src="qr-campus.jpg" alt="Código QR de Inscripción">
+            <p class="qr-label">ESCANEAME PARA INSCRIBIR</p>
+        </div>
+
+        <br>
+        <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta" style="background: var(--udj-navy); color: white;" target="_blank">Abrir Formulario de Google</a>
+
+        <div class="mec-box">
+            <div class="mec-item">
+                <h3>Motivación</h3>
+                <p>Pasión por el aprendizaje diario.</p>
+            </div>
+            <div class="mec-item">
+                <h3>Esfuerzo</h3>
+                <p>Superación en cada entrenamiento.</p>
+            </div>
+            <div class="mec-item">
+                <h3>Constancia</h3>
+                <p>Hábitos que forman personas.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>U.D. JINÁMAR & SM ACADEMIA - GESTIÓN ESTRATÉGICA 2026</p>
+    </footer>
+
+</body>
+</html>
             <p>U.D. Jinámar & SM Academia presentan el campus más completo de Gran Canaria. Metodología MEC, tecnificación y valores.</p>
             <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta" target="_blank">Inscribirse Ahora</a>
         </div>
