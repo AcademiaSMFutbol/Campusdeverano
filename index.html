@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Operativo - Campus U.D. Jinámar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003366; /* Azul Ejecutivo SM */
+            --secondary: #00AEEF; /* Azul Acción */
+            --accent: #FFCC00; /* Amarillo MEC */
+            --bg: #F4F7F9;
+            --text: #333;
+            --white: #ffffff;
+            --nav-bg: #e0e0e0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        header p { font-weight: 300; opacity: 0.9; }
+
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+
+        /* Navigation Tabs System (Multi-page) */
+        .nav-tabs { 
+            display: flex; 
+            flex-wrap: wrap; 
+            background: #ddd; 
+            border-radius: 8px 8px 0 0; 
+            overflow: hidden; 
+            list-style: none;
+        }
+
+        .nav-tabs li { flex: 1; min-width: 120px; }
+
+        .nav-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #555;
+            background: var(--nav-bg);
+            text-align: center;
+            font-weight: 600;
+            transition: 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: #eee;
+            color: var(--primary);
+        }
+
+        /* Clase para identificar la página donde estamos */
+        .nav-link.active {
+            background: var(--white);
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .content-body {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Estilos de contenido */
+        h2 { color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+        
+        .mec-card {
+            border-left: 5px solid var(--secondary);
+            background: #f0f8ff;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+        th { background: var(--primary); color: var(--white); padding: 12px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #eee; }
+        tr:nth-child(even) { background: #f9f9f9; }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .badge-mec { background: var(--accent); color: #000; }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #888;
+            padding-bottom: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-link { font-size: 0.8rem; padding: 0.8rem 0.5rem; }
+            header h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gestión Campus 2026</h1>
+    <p>U.D. Jinámar & SM Academia | Planificación Estratégica</p>
+</header>
+
+<div class="container">
+    <nav>
+        <ul class="nav-tabs">
+            <li><a href="index.html" class="nav-link active">OPERATIVO</a></li>
+            <li><a href="ayuntamiento.html" class="nav-link">AYUNTAMIENTO</a></li>
+            <li><a href="familias.html" class="nav-link">FAMILIAS</a></li>
+            <li><a href="patrocinio.html" class="nav-link">PATROCINIO</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-body">
+        <section id="plan-diario">
+            <h2>Planificación Diaria y Metodología</h2>
+            
+            <div class="mec-card">
+                <strong>Enfoque Metodológico MEC:</strong> Motivación (Lunes), Esfuerzo (Martes), Constancia (Miércoles), Respeto (Jueves) y Compromiso (Viernes).
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horario</th>
+                        <th>Actividad</th>
+                        <th>Objetivo MEC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>09:00 - 09:10</td><td>Llegada</td><td>Control y Motivación Inicial</td></tr>
+                    <tr><td>09:10 - 10:30</td><td>Tecnificación</td><td>Gesto técnico individual</td></tr>
+                    <tr><td>10:30 - 11:00</td><td>Desayuno</td><td>Nutrición y Valores</td></tr>
+                    <tr><td>11:00 - 12:00</td><td>Juego Aplicado</td><td>Transferencia al juego real</td></tr>
+                    <tr><td>12:00 - 12:50</td><td>Partido Final</td><td>Competición y Respeto</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Documento Propiedad de SM Academia - Prohibida su reproducción total o parcial.</p>
+    </footer>
+</div>
+
+</body>
+</html>
