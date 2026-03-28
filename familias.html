@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --udj-navy: #001F3F; /* Azul Marino Principal */
-            --udj-white: #FFFFFF; /* Blanco */
-            --mec-yellow: #FFCC00; /* Amarillo de contraste MEC */
+            --udj-navy: #001F3F; 
+            --udj-white: #FFFFFF; 
+            --mec-yellow: #FFCC00; 
             --text-dark: #222222;
             --bg-light: #F4F7F9;
             --discount-red: #e74c3c;
@@ -35,10 +35,10 @@
         .hero h1 span { color: var(--mec-yellow); }
         .hero p { font-size: 1.2rem; font-weight: 300; opacity: 0.9; }
 
-        /* --- SECCIÓN DE PRECIOS (BAJO CABECERA) --- */
+        /* --- SECCIÓN DE PRECIOS --- */
         .pricing-section { 
             background: var(--udj-navy); 
-            padding: 2rem 1.5rem; 
+            padding: 3rem 1.5rem; 
             margin-top: -1px;
             text-align: center;
         }
@@ -47,8 +47,8 @@
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 1.5rem; 
-            max-width: 1000px; 
-            margin: 0 auto 2rem;
+            max-width: 1100px; 
+            margin: 0 auto 2.5rem;
         }
 
         .price-card { 
@@ -57,6 +57,9 @@
             border-radius: 15px; 
             text-align: center; 
             border: 2px solid var(--mec-yellow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             transition: 0.3s;
         }
 
@@ -68,10 +71,16 @@
             background: #fff8e1; 
             padding: 0.8rem; 
             border-radius: 8px; 
-            border: 1px dashed var(--accent-gold); 
+            border: 1px dashed var(--mec-yellow); 
             font-size: 0.85rem;
+            margin-top: 10px;
         }
         .special-offer strong { color: var(--discount-red); font-size: 1.1rem; }
+
+        /* Estilo específico para tarjeta de conciliación */
+        .conciliacion-card { border-color: #00AEEF; background-color: #f0faff; }
+        .conciliacion-card h3 { color: #0056b3; }
+        .conciliacion-card .price-value { font-size: 2.5rem; color: #0056b3; }
 
         /* --- BOTÓN CTA PRINCIPAL --- */
         .cta-container { text-align: center; margin-bottom: 1rem; }
@@ -129,7 +138,7 @@
 
     <header class="hero">
         <div class="logo-container">
-            <img src="https://lh3.googleusercontent.com/u/0/d/14bW3xgpxC7kc26N2BCDHyAUejkWBby8B=w1000-h1000" alt="U.D. Jinámar" class="logo-img">
+            <img src="https://lh3.googleusercontent.com/d/14bW3xgpxC7kc26N2BCDHyAUejkWBby8B" alt="U.D. Jinámar" class="logo-img">
         </div>
         <h1>Campus Verano 2026<br><span>Entrena tu Éxito</span></h1>
         <p>6 Semanas de formación profesional en el Estadio Pedro Miranda</p>
@@ -138,26 +147,44 @@
     <section class="pricing-section">
         <div class="price-grid">
             <div class="price-card">
-                <h3>Campus Completo</h3>
-                <span class="price-value">200€</span>
-                <span class="price-label">Tarifa General (6 Semanas)</span>
+                <div>
+                    <h3>Campus Completo</h3>
+                    <span class="price-value">200€</span>
+                    <span class="price-label">Tarifa General (6 Semanas)</span>
+                </div>
                 <div class="special-offer">
                     Precio Club / Academia: <strong>180€</strong>
                 </div>
             </div>
+
             <div class="price-card">
-                <h3>Cuota Semanal</h3>
-                <span class="price-value">50€</span>
-                <span class="price-label">Tarifa General</span>
+                <div>
+                    <h3>Cuota Semanal</h3>
+                    <span class="price-value">50€</span>
+                    <span class="price-label">Tarifa General</span>
+                </div>
                 <div class="special-offer">
                     Precio Club / Academia: <strong>45€</strong>
+                </div>
+            </div>
+
+            <div class="price-card conciliacion-card">
+                <div>
+                    <h3>Conciliación</h3>
+                    <span class="price-value">10€</span>
+                    <span class="price-label">Por Servicio / Semana</span>
+                </div>
+                <div style="font-size: 0.85rem; color: #444; margin-top: 10px;">
+                    <p><strong>Temprana (08:00) o Tardía (14:00)</strong></p>
+                    <hr style="margin: 10px 0; opacity: 0.2;">
+                    <p>Día suelto: <strong>3€ / servicio</strong></p>
                 </div>
             </div>
         </div>
 
         <div class="cta-container">
             <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-direct">Inscribir a mi hijo/a ahora</a>
-            <p style="color: white; font-size: 0.8rem; margin-top: 1rem; opacity: 0.8;">* Inscripciones gestionadas por U.D. Jinámar & SM Academia</p>
+            <p style="color: white; font-size: 0.8rem; margin-top: 1.5rem; opacity: 0.8;">* Inscripciones gestionadas por U.D. Jinámar & SM Academia</p>
         </div>
     </section>
 
@@ -165,7 +192,7 @@
         
         <h2 class="section-title">Sobre el Campus</h2>
         <div class="info-box">
-            <p>El <strong>Campus de Verano 2026</strong> une la historia de la <strong>U.D. Jinámar</strong> con la metodología de élite de <strong>SM Academia</strong>. Ofrecemos una experiencia intensiva de 6 semanas diseñada para que cada niño/a mejore su técnica individual mientras se divierte en un entorno seguro.</p>
+            <p>El <strong>Campus de Verano 2026</strong> une la historia de la <strong>U.D. Jinámar</strong> con la metodología de élite de <strong>SM Academia</strong>. Ofrecemos una experiencia intensiva diseñada para que cada niño/a mejore su técnica individual mientras se divierte en un entorno profesional.</p>
         </div>
 
         <div class="director-box">
@@ -174,7 +201,7 @@
                 <p>"Hola, soy Samy, director de SM Academia. Mi trabajo este verano es asegurar que cada minuto de tu hijo en el campus sea de calidad."</p>
                 <div style="font-size: 0.95rem; line-height: 1.5;">
                     <p><strong>Mi formación:</strong> Técnico y Coordinador Deportivo titulado (FIFLP). Creador de la Metodología MEC.</p>
-                    <p><strong>Mi compromiso:</strong> No solo "echamos a rodar el balón". Priorizamos la seguridad, la enseñanza real y el respeto. Cada niño es el protagonista.</p>
+                    <p><strong>Mi compromiso:</strong> Aplicamos un sistema profesional donde la seguridad, el aprendizaje técnico y el respeto van de la mano.</p>
                 </div>
             </div>
         </div>
@@ -188,12 +215,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>09:00 - 09:10</td><td><strong>Llegada:</strong> Recepción y control.</td></tr>
+                <tr><td>09:00 - 09:10</td><td><strong>Llegada:</strong> Recepción y activación.</td></tr>
                 <tr><td>09:10 - 10:30</td><td><strong>Tecnificación:</strong> Gesto técnico (Metodología MEC).</td></tr>
-                <tr><td>10:30 - 11:00</td><td><strong>Desayuno:</strong> Nutrición y valores.</td></tr>
-                <tr><td>11:00 - 12:00</td><td><strong>Juegos Aplicados:</strong> Táctica grupal.</td></tr>
-                <tr><td>12:00 - 12:50</td><td><strong>Partido Final:</strong> Competición y valores.</td></tr>
-                <tr><td>12:50 - 13:00</td><td><strong>Salida:</strong> Cierre y recogida.</td></tr>
+                <tr><td>10:30 - 11:00</td><td><strong>Desayuno:</strong> Hidratación y charla de valores.</td></tr>
+                <tr><td>11:00 - 12:00</td><td><strong>Juegos Aplicados:</strong> Táctica grupal y combinaciones.</td></tr>
+                <tr><td>12:00 - 12:50</td><td><strong>Partido Final:</strong> Competición y juego limpio.</td></tr>
+                <tr><td>12:50 - 13:00</td><td><strong>Salida:</strong> Cierre y recogida segura.</td></tr>
             </tbody>
         </table>
     </div>
