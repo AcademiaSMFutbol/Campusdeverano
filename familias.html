@@ -3,167 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripción Campus 2026 - U.D. Jinámar & SM Academia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <title>Información para Familias - Campus U.D. Jinámar 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --udj-navy: #001F3F; 
-            --udj-white: #FFFFFF; 
-            --mec-yellow: #FFCC00; 
-            --text-dark: #222222;
-            --bg-light: #F9FBFC;
-            --discount-red: #e74c3c;
+            /* Paleta de colores: Profesional, Minimalista y Confiable */
+            --primary-navy: #001F3F; /* Azul Marino Profundo (Confianza, Autoridad) */
+            --accent-gold: #C5A059;  /* Oro Suave (Calidad, Excelencia) */
+            --text-dark: #333333;   /* Gris Oscuro para legibilidad */
+            --bg-light: #F9FBFC;     /* Fondo sutil */
+            --bg-white: #FFFFFF;
+            
+            --nav-bg: #e0e0e0;       /* Fondo de pestaña inactiva */
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--udj-white); color: var(--text-dark); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding-bottom: 50px;
+        }
+
+        /* Contenedor Principal (Simula una página A4 con márgenes amplios) */
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            padding: 4rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        /* --- PORTADA & CABECERA --- */
+        .cover-header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 3rem;
+            margin-bottom: 2rem; /* Espacio para la navegación */
+        }
+
+        .entity-label {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary-navy);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- INTEGRACIÓN LOGO (Escudo U.D. Jinámar) --- */
+        .logo-placeholder {
+            margin: 2.5rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .jinamar-crest-img {
+            max-width: 180px; /* Tamaño elegante y contenido */
+            height: auto;
+            /* Pequeño toque moderno para integrarla */
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .jinamar-crest-img:hover {
+            transform: scale(1.03);
+        }
+        /* Fin Integración Logo */
+
+        .quick-contacts {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 20px;
+        }
+
+        .quick-contacts span strong { color: var(--primary-navy); }
+
+        /* --- NAVEGACIÓN MULTIPÁGINA --- */
+        .nav-tabs { 
+            display: flex; 
+            flex-wrap: wrap; 
+            background: #ddd; 
+            border-radius: 8px 8px 0 0; 
+            overflow: hidden; 
+            list-style: none;
+            margin-bottom: -1px; /* Unión visual con el cuerpo */
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-tabs li { flex: 1; min-width: 120px; }
+
+        .nav-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #555;
+            background: var(--nav-bg);
+            text-align: center;
+            font-weight: 600;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        .nav-link:hover {
+            background: #eee;
+            color: var(--primary-navy);
+        }
+
+        /* Pestaña Activa para FAMILIAS */
+        .nav-link.active {
+            background: var(--bg-white);
+            color: var(--primary-navy);
+            border-bottom: 3px solid var(--accent-gold); /* Usamos Oro para resaltar */
+        }
+
+        .content-body {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            border-top: none; /* Unión con la pestaña */
+        }
+
+        /* --- ESTRUCTURA DE CONTENIDO --- */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-navy);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            bottom: 0;
+            left: 0;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+            font-weight: 300;
+        }
+
+        strong { font-weight: 600; color: #111; }
+
+        /* Tarjeta MEC para mensajes clave */
+        .mec-card {
+            border-left: 5px solid var(--accent-gold);
+            background: rgba(197, 160, 89, 0.05); /* Oro muy suave */
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Listas Modernas */
+        ul {
+            list-style: none;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 300;
+        }
+
+        ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Sección de Samy Martín */
+        .coordinator-badge {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+        }
         
-        /* Hero */
-        .hero { background: linear-gradient(135deg, var(--udj-navy) 40%, #003366 100%); color: var(--udj-white); padding: 5rem 1.5rem; text-align: center; }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; line-height: 1.1; }
-        .hero h1 span { color: var(--mec-yellow); }
-        
-        .btn-cta { display: inline-block; padding: 1.2rem 2.5rem; background-color: var(--mec-yellow); color: var(--udj-navy); text-decoration: none; font-weight: 700; border-radius: 50px; transition: 0.3s; margin-top: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .btn-cta:hover { transform: scale(1.05); background: white; }
+        .coordinator-info h4 { color: var(--primary-navy); margin: 0; font-size: 1.1rem; }
+        .coordinator-info span { font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase; }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem; }
-        .section-title { text-align: center; color: var(--udj-navy); margin-bottom: 2rem; font-size: 2rem; border-bottom: 3px solid var(--mec-yellow); display: inline-block; }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #888;
+        }
 
-        /* Presentación */
-        .intro-box { background: var(--bg-light); padding: 2.5rem; border-radius: 20px; border-left: 5px solid var(--mec-yellow); margin-bottom: 3rem; }
-        .intro-box p { margin-bottom: 1rem; font-size: 1.05rem; }
-
-        /* Sección Director (NUEVA) */
-        .director-card { background: #fff; border: 1px solid #eee; padding: 2.5rem; border-radius: 20px; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .director-header { display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem; }
-        .director-header h3 { color: var(--udj-navy); font-size: 1.8rem; margin: 0; }
-        .director-content h4 { color: var(--udj-navy); margin: 1.5rem 0 0.5rem; font-size: 1.1rem; text-transform: uppercase; border-left: 3px solid var(--mec-yellow); padding-left: 10px; }
-        .director-content p { font-size: 1rem; color: #444; margin-bottom: 1rem; }
-        .director-content ul { list-style: none; padding-left: 5px; }
-        .director-content ul li { position: relative; padding-left: 25px; margin-bottom: 10px; }
-        .director-content ul li::before { content: '⚽'; position: absolute; left: 0; font-size: 0.9rem; }
-
-        /* Tarifas */
-        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .price-card { background: var(--bg-light); padding: 2.5rem; border-radius: 15px; border: 1px solid #ddd; text-align: center; position: relative; transition: 0.3s; }
-        .price-card:hover { border-color: var(--mec-yellow); transform: translateY(-5px); }
-        
-        .price-card h3 { color: var(--udj-navy); margin-bottom: 0.5rem; font-size: 1.4rem; }
-        .price-value { font-size: 3.5rem; font-weight: 800; color: var(--udj-navy); display: block; line-height: 1; margin-bottom: 1rem; }
-        .price-label { font-size: 0.9rem; text-transform: uppercase; color: #666; font-weight: 600; margin-bottom: 1.5rem; display: block; }
-        
-        .special-offer { background: #fff; padding: 1rem; border-radius: 10px; border: 1px dashed #ccc; margin-top: 1rem; }
-        .special-offer p { font-size: 0.8rem; color: #444; margin: 0; line-height: 1.4; }
-        .special-offer strong { color: var(--discount-red); font-size: 1.1rem; }
-
-        /* Sesión */
-        .schedule-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .schedule-table th { background: var(--udj-navy); color: white; padding: 1.2rem; text-align: left; }
-        .schedule-table td { padding: 1rem; border-bottom: 1px solid #eee; }
-
-        /* QR */
-        .qr-section { background: var(--bg-light); padding: 3rem 1.5rem; text-align: center; border-radius: 50px 50px 0 0; }
-        .qr-box { background: white; padding: 2rem; border-radius: 20px; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .qr-box img { max-width: 200px; height: auto; display: block; margin: 0 auto 1rem; }
-
-        footer { background: var(--udj-navy); color: white; padding: 2rem; text-align: center; font-size: 0.8rem; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-container { padding: 2rem; margin-top: 1rem; }
+            .cover-header { padding-bottom: 2rem; margin-bottom: 1.5rem; }
+            .main-title { font-size: 2.2rem; }
+            .jinamar-crest-img { max-width: 140px; }
+            .quick-contacts { flex-direction: column; gap: 5px; }
+            .nav-link { font-size: 0.75rem; padding: 0.8rem 0.5rem; }
+            .content-body { padding: 1.5rem; }
+        }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1>Campus Verano 2026<br><span>Entrena tu Éxito</span></h1>
-        <p>6 semanas de puro fútbol y formación de alto nivel</p>
-        <a href="#inscripcion" class="btn-cta">Inscribirse Ahora</a>
-    </header>
-
-    <div class="container">
-        <h2 class="section-title">Sobre el Campus</h2>
-        <div class="intro-box">
-            <p>Bienvenido a las <strong>6 semanas</strong> más intensas del verano. El <strong>Campus de Verano 2026</strong>, una alianza estratégica entre la <strong>U.D. Jinámar</strong> y <strong>SM Academia</strong>, regresa para ofrecer una formación técnica superior bajo la innovadora <strong>Metodología MEC</strong>.</p>
-            <p>Diseñado para potenciar el talento joven, nuestro programa equilibra la exigencia profesional con la transmisión de valores fundamentales, garantizando un crecimiento deportivo y personal inigualable.</p>
-        </div>
-
-        <div class="director-card">
-            <div class="director-header">
-                <h3>⚽ ¿Quién dirige el Campus?</h3>
+    <div class="page-container">
+        
+        <header class="cover-header">
+            <span class="entity-label">GUÍA INFORMATIVA</span>
+            <h1 class="main-title">Bienvenidos<br>Familias</h1>
+            
+            <div class="logo-placeholder">
+                <img src="https://lh3.googleusercontent.com/u/0/d/14bW3xgpxC7kc26N2BCDHyAUejkWBby8B=w1000-h1000" alt="Escudo Oficial U.D. Jinámar 1975" class="jinamar-crest-img">
             </div>
-            <div class="director-content">
-                <p><em>"Hola, soy Samy, director de SM Academia. Mi trabajo este verano es asegurar que cada minuto de tu hijo en el campus sea de calidad."</em></p>
+
+            <p><strong>Campus Verano 2026:</strong> U.D. Jinámar & SM Academia</p>
+
+            <div class="quick-contacts">
+                <span><strong>Tel. Coordinación:</strong> [COMPLETAR]</span>
+                <span><strong>Email:</strong> udjinamar@gmail.com</span>
+                <span><strong>Lugar:</strong> Estadio Municipal Pedro Miranda</span>
+            </div>
+        </header>
+
+        <nav>
+            <ul class="nav-tabs">
+                <li><a href="index.html" class="nav-link">OPERATIVO</a></li>
+                <li><a href="ayuntamiento.html" class="nav-link">AYUNTAMIENTO</a></li>
+                <li><a href="familias.html" class="nav-link active">FAMILIAS</a></li>
+                <li><a href="patrocinio.html" class="nav-link">PATROCINIO</a></li>
+            </ul>
+        </nav>
+
+        <main class="content-body">
+            
+            <section id="mensaje-bienvenida">
+                <h2>Compromiso y Transparencia</h2>
+                <p>Estimadas familias, es un honor para la <strong>U.D. Jinámar</strong> y <strong>SM Academia</strong> darles la bienvenida a esta edición del Campus Verano 2026. Entendemos que nos confían lo más valioso: la educación y el bienestar de sus hijos durante el periodo estival.</p>
                 
-                <h4>Mi formación técnica:</h4>
+                <div class="mec-card">
+                    <strong>Nuestra Prioridad:</strong> Garantizar un entorno seguro, profesional y divertido donde el aprendizaje técnico y el respeto vayan siempre de la mano. No solo 'echamos a rodar el balón'; aplicamos un sistema integral para que cada niño se sienta protagonista de su mejora.
+                </div>
+            </section>
+
+            <section id="quien-dirige">
+                <h2>¿Quién dirige el Campus?</h2>
+                <p>La dirección técnica y coordinación operativa está centralizada para asegurar que cada minuto de actividad sea de calidad y cumpla con los estándares profesionales solicitados por las familias.</p>
+                
                 <ul>
-                    <li>Técnico y Coordinador Deportivo titulado por la Escuela Canaria de Entrenadores (FIFLP).</li>
-                    <li>Creador de la Metodología MEC (Motivación, Esfuerzo y Constancia).</li>
+                    <li><strong>Samy Martín:</strong> Director de SM Academia. Técnico y Coordinador Deportivo titulado por la Escuela Canaria de Entrenadores (FIFLP). Creador de la Metodología MEC.</li>
+                    <li><strong>Ratios Seguras:</strong> Mantenemos un monitor titulado por cada 12 participantes para asegurar supervisión constante y enseñanza real.</li>
+                    <li><strong>Seguridad y Protocolo:</strong> Todo el personal cuenta con certificados negativos de delitos de naturaleza sexual y formación en Primeros Auxilios.</li>
                 </ul>
-
-                <h4>Mi compromiso:</h4>
-                <p>No solo "echamos a rodar el balón". Aplicamos un sistema profesional donde el aprendizaje técnico y el respeto van de la mano. Como coordinador titulado, mi prioridad es la seguridad, la enseñanza real y que cada niño se sienta protagonista de su propia mejora.</p>
-            </div>
-        </div>
-
-        <h2 class="section-title" style="display: block; text-align: center;">Tarifas de Inscripción</h2>
-        <div class="price-grid">
-            <div class="price-card">
-                <h3>Campus Completo</h3>
-                <span class="price-value">200€</span>
-                <span class="price-label">Tarifa General (6 Semanas)</span>
                 
-                <div class="special-offer">
-                    <p>Precio especial para jugadores de la <br><strong>U.D. Jinámar y SM Fútbol: 180€</strong></p>
+                <div class="coordinator-badge">
+                    <div class="coordinator-info">
+                        <span>Dirección Técnica y Coordinación General</span>
+                        <h4>Samy Martín</h4>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="price-card">
-                <h3>Cuota Semanal</h3>
-                <span class="price-value">50€</span>
-                <span class="price-label">Tarifa General</span>
-                
-                <div class="special-offer">
-                    <p>Precio especial para jugadores de la <br><strong>U.D. Jinámar y SM Fútbol: 45€</strong></p>
-                </div>
-            </div>
-        </div>
-        <p style="text-align: center; font-size: 0.85rem; color: #888;">* Los precios especiales se aplicarán tras verificar la pertenencia al club o academia.</p>
+            <section id="informacion-practica">
+                <h2>Información Práctica</h2>
+                <ul>
+                    <li><strong>Fechas:</strong> Del 22 de junio al 31 de julio (6 semanas).</li>
+                    <li><strong>Horario Tipo:</strong> 09:00 a 13:00 (Llegada desde las 08:00 y recogida hasta las 14:00 si se contrata servicio adicional).</li>
+                    <li><strong>Material Necesario:</strong> Ropa deportiva cómoda, botas de fútbol (o tenis), botella de agua reutilizable identificada y protector solar aplicado desde casa.</li>
+                    <li><strong>Desayuno:</strong> Está incluido un desayuno saludable y charlas sobre nutrición y valores deportivos (Metodología MEC).</li>
+                </ul>
+            </section>
+
+            <section id="inscripcion">
+                <h2>Inscripción y Precios</h2>
+                <p>Para asegurar la plaza y aplicar los descuentos correspondientes, por favor completen el formulario oficial.</p>
+                <ul>
+                    <li><strong>Tarifa General (Campus Completo - 6 sem.):</strong> 200€</li>
+                    <li><strong>Precio Especial (Jugadores U.D. Jinámar y SM Fútbol):</strong> 180€</li>
+                    <li><strong>Cuota Semanal General:</strong> 50€ (45€ para miembros de los clubes).</li>
+                </ul>
+                <p style="font-size: 0.8rem; color: #666; margin-top: 1rem;">* Los precios especiales se aplicarán tras verificar la pertenencia al club o academia.</p>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>U.D. JINÁMAR & SM ACADEMIA - 2026<br>Gestión de Formación Deportiva de Élite</p>
+        </footer>
+
     </div>
-
-    <div class="container">
-        <h2 class="section-title" style="display: block; text-align: center;">Sesión Tipo (09:00 - 13:00)</h2>
-        <table class="schedule-table">
-            <thead>
-                <tr>
-                    <th>Horario</th>
-                    <th>Actividad</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>09:00 - 09:10</td><td><strong>Llegada:</strong> Recepción y activación motivacional.</td></tr>
-                <tr><td>09:10 - 10:30</td><td><strong>Tecnificación:</strong> Gesto técnico individual (Metodología MEC).</td></tr>
-                <tr><td>10:30 - 11:00</td><td><strong>Desayuno:</strong> Hidratación y charla de valores.</td></tr>
-                <tr><td>11:00 - 12:00</td><td><strong>Juegos Aplicados:</strong> Acciones combinativas y táctica.</td></tr>
-                <tr><td>12:00 - 12:50</td><td><strong>Partido Final:</strong> Competición interna y valores.</td></tr>
-                <tr><td>12:50 - 13:00</td><td><strong>Salida:</strong> Cierre y recogida segura.</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <section class="qr-section" id="inscripcion">
-        <div class="container">
-            <h2 class="section-title">Reserva tu Plaza</h2>
-            <p style="margin-bottom: 2rem;">Escanea el código o pulsa el botón para abrir el formulario oficial de inscripción.</p>
-            <div class="qr-box">
-                <img src="qr-campus.jpg" alt="QR Inscripción">
-                <p style="font-size: 0.75rem; font-weight: bold; color: var(--udj-navy);">ESCANEAME PARA INSCRIBIR</p>
-            </div>
-            <br>
-            <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta" style="background: var(--udj-navy); color: white;">Ir al Formulario Directo</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>U.D. JINÁMAR & SM ACADEMIA - 2026<br>Gestión de Formación Deportiva de Élite</p>
-    </footer>
 
 </body>
 </html>
