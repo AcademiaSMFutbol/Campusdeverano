@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Paleta de colores: Profesional y Minimalista */
+            /* Paleta de colores: Profesional, Moderna y Minimalista */
             --primary-navy: #001F3F; /* Azul Marino Profundo (Confianza, Autoridad) */
             --accent-gold: #C5A059;  /* Oro Suave (Calidad, Excelencia) */
             --text-dark: #333333;   /* Gris Oscuro para legibilidad */
@@ -64,7 +64,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* --- INTEGRACIÓN LOGO/IMAGEN (Concepto extraído) --- */
+        /* --- INTEGRACIÓN IMAGEN (Escudo U.D. Jinámar) --- */
         .logo-placeholder {
             margin: 2.5rem 0;
             display: flex;
@@ -72,52 +72,19 @@
             align-items: center;
         }
 
-        .jinamar-crest-concept {
-            border: 4px solid var(--primary-navy);
-            color: var(--primary-navy);
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* Forma circular moderna */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            font-weight: 700;
-            position: relative;
-        }
-        
-        /* Efecto de 'escudo' minimalista */
-        .jinamar-crest-concept::before {
-            content: '';
-            position: absolute;
-            width: 110%;
-            height: 110%;
-            border: 1px solid var(--accent-gold);
-            border-radius: 50%;
+        .jinamar-crest-img {
+            max-width: 180px; /* Tamaño elegante y contenido */
+            height: auto;
+            /* Pequeño toque moderno para integrarla */
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
         }
 
-        .crest-year {
-            font-size: 0.9rem;
-            color: var(--accent-gold);
-            letter-spacing: 1px;
+        .jinamar-crest-img:hover {
+            transform: scale(1.03);
         }
-
-        .crest-name {
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 5px 0;
-            line-height: 1;
-        }
-
-        .crest-location {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: #666;
-        }
-
-        /* Fin Integración Logo */
+        /* Fin Integración Imagen */
 
         .quick-contacts {
             margin-top: 2rem;
@@ -278,6 +245,7 @@
             .quick-contacts { flex-direction: column; gap: 5px; }
             .cronograma-table th, .cronograma-table td { padding: 0.8rem; font-size: 0.85rem; }
             .project-footer { grid-template-columns: 1fr; }
+            .jinamar-crest-img { max-width: 140px; }
         }
     </style>
 </head>
@@ -290,11 +258,7 @@
             <h1 class="main-title">Campus Verano 2026<br>U.D. Jinámar</h1>
             
             <div class="logo-placeholder">
-                <div class="jinamar-crest-concept">
-                    <span class="crest-year">1975</span>
-                    <span class="crest-name">U.D.<br>JINÁMAR</span>
-                    <span class="crest-location">Gran Canaria</span>
-                </div>
+                <img src="https://lh3.googleusercontent.com/u/0/d/14bW3xgpxC7kc26N2BCDHyAUejkWBby8B=w1000-h1000" alt="Escudo Oficial U.D. Jinámar 1975" class="jinamar-crest-img">
             </div>
 
             <p><strong>Entidad Promotora:</strong> Club U.D. Jinámar<br>
