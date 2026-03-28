@@ -12,6 +12,7 @@
             --mec-yellow: #FFCC00; 
             --text-dark: #222222;
             --bg-light: #F9FBFC;
+            --discount-red: #e74c3c;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--udj-white); color: var(--text-dark); line-height: 1.6; }
@@ -30,11 +31,17 @@
 
         /* Tarifas */
         .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .price-card { background: var(--bg-light); padding: 2.5rem; border-radius: 15px; border: 1px solid #ddd; text-align: center; position: relative; }
-        .discount-badge { position: absolute; top: -10px; right: -10px; background: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
-        .price-card h3 { color: var(--udj-navy); margin-bottom: 1rem; }
-        .price-value { font-size: 3rem; font-weight: 800; color: var(--udj-navy); display: block; }
-        .price-card p { font-size: 0.9rem; color: #555; font-weight: 400; margin-top: 10px; }
+        .price-card { background: var(--bg-light); padding: 2.5rem; border-radius: 15px; border: 1px solid #ddd; text-align: center; position: relative; transition: 0.3s; }
+        .price-card:hover { border-color: var(--mec-yellow); transform: translateY(-5px); }
+        
+        .price-card h3 { color: var(--udj-navy); margin-bottom: 0.5rem; font-size: 1.4rem; }
+        .price-value { font-size: 3.5rem; font-weight: 800; color: var(--udj-navy); display: block; line-height: 1; margin-bottom: 1rem; }
+        .price-label { font-size: 0.9rem; text-transform: uppercase; color: #666; font-weight: 600; margin-bottom: 1.5rem; display: block; }
+        
+        /* Precios Especiales (Letra pequeña) */
+        .special-offer { background: #fff; padding: 1rem; border-radius: 10px; border: 1px dashed #ccc; margin-top: 1rem; }
+        .special-offer p { font-size: 0.8rem; color: #444; margin: 0; line-height: 1.4; }
+        .special-offer strong { color: var(--discount-red); font-size: 1.1rem; }
 
         /* Sesión */
         .schedule-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
@@ -54,27 +61,34 @@
 
     <header class="hero">
         <h1>Campus Verano 2026<br><span>Entrena tu Éxito</span></h1>
-        <p>Inscripciones abiertas para jugadores de la U.D. Jinámar y SM Fútbol</p>
+        <p>Vive la experiencia de alto rendimiento este verano</p>
         <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-cta">Inscribirse Ahora</a>
     </header>
 
     <div class="container" style="text-align: center;">
-        <h2 class="section-title">Tarifas Exclusivas</h2>
+        <h2 class="section-title">Tarifas de Inscripción</h2>
         <div class="price-grid">
             <div class="price-card">
-                <div class="discount-badge">-10% DTO.</div>
                 <h3>Mes Completo</h3>
-                <span class="price-value">180€</span>
-                <p><strong>Beneficio para:</strong><br>Jugadores U.D. Jinámar<br>Alumnos SM Fútbol</p>
+                <span class="price-value">200€</span>
+                <span class="price-label">Tarifa General</span>
+                
+                <div class="special-offer">
+                    <p>Precio especial para jugadores de la <br><strong>U.D. Jinámar y SM Fútbol: 180€</strong></p>
+                </div>
             </div>
+
             <div class="price-card">
-                <div class="discount-badge">-10% DTO.</div>
                 <h3>Cuota Semanal</h3>
-                <span class="price-value">45€</span>
-                <p><strong>Beneficio para:</strong><br>Jugadores U.D. Jinámar<br>Alumnos SM Fútbol</p>
+                <span class="price-value">50€</span>
+                <span class="price-label">Tarifa General</span>
+                
+                <div class="special-offer">
+                    <p>Precio especial para jugadores de la <br><strong>U.D. Jinámar y SM Fútbol: 45€</strong></p>
+                </div>
             </div>
         </div>
-        <p style="font-size: 0.85rem; color: #888;">*Tarifa general para externos: 200€/mes o 50€/semanal.</p>
+        <p style="font-size: 0.85rem; color: #888;">* Los precios especiales se aplicarán tras verificar la pertenencia al club o academia.</p>
     </div>
 
     <div class="container">
@@ -100,7 +114,7 @@
     <section class="qr-section">
         <div class="container">
             <h2 class="section-title">Reserva tu Plaza</h2>
-            <p style="margin-bottom: 2rem;">Escanea el código o pulsa el botón para abrir el formulario oficial.</p>
+            <p style="margin-bottom: 2rem;">Escanea el código o pulsa el botón para abrir el formulario oficial de inscripción.</p>
             <div class="qr-box">
                 <img src="qr-campus.jpg" alt="QR Inscripción">
                 <p style="font-size: 0.75rem; font-weight: bold; color: var(--udj-navy);">ESCANEAME PARA INSCRIBIR</p>
