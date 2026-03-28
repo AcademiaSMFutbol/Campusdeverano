@@ -23,35 +23,28 @@
         .hero { 
             background: linear-gradient(135deg, var(--udj-navy) 60%, #003366 100%); 
             color: var(--udj-white); 
-            padding: 3rem 1.5rem; 
+            padding: 4rem 1.5rem 3rem; 
             text-align: center; 
             border-bottom: 5px solid var(--mec-yellow);
         }
 
-        .logo-container { 
-            margin-bottom: 1rem; 
-            display: flex; 
-            justify-content: center; 
-            overflow: hidden;
-        }
-
-        /* Ajuste para que el PDF de Drive se vea como imagen sin bordes */
-        .logo-frame { 
+        .logo-container { margin-bottom: 1.5rem; display: flex; justify-content: center; }
+        .logo-img { 
             width: 180px; 
             height: 180px; 
             border: none;
-            pointer-events: none; /* Evita interacción con el visor de Drive */
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
         }
 
-        .hero h1 { font-size: 2.8rem; margin-bottom: 0.5rem; line-height: 1.1; }
+        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; line-height: 1.1; }
         .hero h1 span { color: var(--mec-yellow); }
-        .hero p { font-size: 1.1rem; font-weight: 300; opacity: 0.9; }
+        .hero p { font-size: 1.2rem; font-weight: 300; opacity: 0.9; }
 
-        /* --- SECCIÓN DE PRECIOS --- */
+        /* --- SECCIÓN DE PRECIOS E INSCRIPCIÓN --- */
         .pricing-section { 
             background: var(--udj-navy); 
-            padding: 2.5rem 1.5rem; 
+            padding: 3rem 1.5rem; 
+            margin-top: -1px;
             text-align: center;
         }
 
@@ -60,78 +53,80 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 1.5rem; 
             max-width: 1100px; 
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
         }
 
         .price-card { 
             background: var(--udj-white); 
-            padding: 1.8rem; 
+            padding: 2rem; 
             border-radius: 15px; 
+            text-align: center; 
             border: 2px solid var(--mec-yellow);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .price-card h3 { color: var(--udj-navy); margin-bottom: 0.5rem; font-size: 1.3rem; }
-        .price-value { font-size: 3rem; font-weight: 800; color: var(--udj-navy); display: block; }
-        .price-label { font-size: 0.75rem; text-transform: uppercase; color: #666; font-weight: 600; margin-bottom: 1rem; }
+        .price-card h3 { color: var(--udj-navy); margin-bottom: 0.5rem; font-size: 1.4rem; }
+        .price-value { font-size: 3.5rem; font-weight: 800; color: var(--udj-navy); display: block; line-height: 1; }
+        .price-label { font-size: 0.8rem; text-transform: uppercase; color: #666; font-weight: 600; margin-bottom: 1rem; display: block; }
         
         .special-offer { 
             background: #fff8e1; 
-            padding: 0.7rem; 
+            padding: 0.8rem; 
             border-radius: 8px; 
             border: 1px dashed var(--mec-yellow); 
             font-size: 0.85rem;
+            margin-top: 10px;
         }
-        .special-offer strong { color: var(--discount-red); }
+        .special-offer strong { color: var(--discount-red); font-size: 1.1rem; }
 
         .conciliacion-card { border-color: #00AEEF; background-color: #f0faff; }
+        .conciliacion-card h3 { color: #0056b3; }
+        .conciliacion-card .price-value { font-size: 2.5rem; color: #0056b3; }
 
-        /* --- BOTÓN CTA --- */
+        .cta-container { text-align: center; margin-bottom: 1rem; }
         .btn-direct { 
             display: inline-block; 
-            padding: 1.2rem 2.5rem; 
+            padding: 1.5rem 3rem; 
             background-color: var(--mec-yellow); 
             color: var(--udj-navy); 
             text-decoration: none; 
             font-weight: 800; 
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             border-radius: 50px; 
             text-transform: uppercase;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             transition: 0.3s ease;
+            border: 2px solid var(--udj-white);
         }
-        .btn-direct:hover { transform: translateY(-3px); background: var(--udj-white); }
+        .btn-direct:hover { transform: scale(1.05); background: var(--udj-white); color: var(--udj-navy); }
 
-        /* --- CONTENIDO --- */
-        .container { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem; }
-        .section-title { text-align: center; color: var(--udj-navy); margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 3px solid var(--mec-yellow); display: inline-block; }
+        /* --- CUERPO INFORMATIVO --- */
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+        .section-title { text-align: center; color: var(--udj-navy); margin-bottom: 2rem; font-size: 2rem; border-bottom: 3px solid var(--mec-yellow); display: inline-block; }
 
-        .info-box { background: var(--bg-light); padding: 2rem; border-radius: 15px; border-left: 6px solid var(--udj-navy); margin-bottom: 2rem; }
+        .info-box { background: var(--bg-light); padding: 2.5rem; border-radius: 20px; border-left: 8px solid var(--udj-navy); margin-bottom: 3rem; }
         
-        .director-box { 
-            display: flex; 
-            gap: 1.5rem; 
-            align-items: center; 
-            background: var(--udj-navy); 
-            color: white; 
-            padding: 2rem; 
-            border-radius: 15px;
-            margin-bottom: 2rem;
-        }
-        .director-text h3 { color: var(--mec-yellow); margin-bottom: 0.5rem; }
+        /* SECCIÓN DIRECTOR (TEXTO COMPLETO RESTAURADO) */
+        .director-card { background: #fff; border: 1px solid #eee; padding: 2.5rem; border-radius: 20px; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .director-header h3 { color: var(--udj-navy); font-size: 1.8rem; margin-bottom: 1.5rem; }
+        .director-content h4 { color: var(--udj-navy); margin: 1.5rem 0 0.5rem; font-size: 1.1rem; text-transform: uppercase; border-left: 3px solid var(--mec-yellow); padding-left: 10px; }
+        .director-content p { font-size: 1rem; color: #444; margin-bottom: 1rem; }
+        .director-content ul { list-style: none; padding-left: 5px; }
+        .director-content ul li { position: relative; padding-left: 25px; margin-bottom: 10px; }
+        .director-content ul li::before { content: '⚽'; position: absolute; left: 0; font-size: 0.9rem; }
 
-        .schedule-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .schedule-table th { background: var(--udj-navy); color: white; padding: 1rem; text-align: left; }
-        .schedule-table td { padding: 0.8rem; border-bottom: 1px solid #eee; }
+        /* TABLA */
+        .schedule-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .schedule-table th { background: var(--udj-navy); color: white; padding: 1.2rem; text-align: left; }
+        .schedule-table td { padding: 1rem; border-bottom: 1px solid #eee; }
 
-        footer { background: var(--udj-navy); color: white; padding: 2.5rem 1.5rem; text-align: center; border-top: 5px solid var(--mec-yellow); }
+        footer { background: var(--udj-navy); color: white; padding: 3rem 1.5rem; text-align: center; border-top: 5px solid var(--mec-yellow); }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .director-box { flex-direction: column; text-align: center; }
-            .btn-direct { width: 100%; }
+            .hero h1 { font-size: 2.2rem; }
+            .btn-direct { width: 100%; padding: 1.2rem; font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -139,10 +134,10 @@
 
     <header class="hero">
         <div class="logo-container">
-            <iframe src="https://drive.google.com/file/d/14bW3xgpxC7kc26N2BCDHyAUejkWBby8B/preview" class="logo-frame"></iframe>
+            <iframe src="https://drive.google.com/file/d/14bW3xgpxC7kc26N2BCDHyAUejkWBby8B/preview" class="logo-img"></iframe>
         </div>
         <h1>Campus Verano 2026<br><span>Entrena tu Éxito</span></h1>
-        <p>Estadio Municipal Pedro Miranda (Jinámar)</p>
+        <p>6 Semanas de formación profesional en el Estadio Pedro Miranda</p>
     </header>
 
     <section class="pricing-section">
@@ -151,69 +146,88 @@
                 <div>
                     <h3>Campus Completo</h3>
                     <span class="price-value">200€</span>
-                    <span class="price-label">6 Semanas (General)</span>
+                    <span class="price-label">Tarifa General (6 Semanas)</span>
                 </div>
-                <div class="special-offer">Club / Academia: <strong>180€</strong></div>
+                <div class="special-offer">
+                    Precio Club / Academia: <strong>180€</strong>
+                </div>
             </div>
-
             <div class="price-card">
                 <div>
                     <h3>Cuota Semanal</h3>
                     <span class="price-value">50€</span>
-                    <span class="price-label">Reserva por semana</span>
+                    <span class="price-label">Tarifa General</span>
                 </div>
-                <div class="special-offer">Club / Academia: <strong>45€</strong></div>
+                <div class="special-offer">
+                    Precio Club / Academia: <strong>45€</strong>
+                </div>
             </div>
-
             <div class="price-card conciliacion-card">
                 <div>
                     <h3>Conciliación</h3>
                     <span class="price-value">10€</span>
-                    <span class="price-label">Semana / Servicio</span>
+                    <span class="price-label">Por Semana / Servicio</span>
                 </div>
-                <p style="font-size: 0.8rem; margin-top: 10px;">Temprana (08:00) o Tardía (14:00)<br>Día suelto: 3€</p>
+                <div style="font-size: 0.85rem; color: #444; margin-top: 10px;">
+                    <p><strong>Temprana (08:00) o Tardía (14:00)</strong></p>
+                    <hr style="margin: 10px 0; opacity: 0.2;">
+                    <p>Día suelto: <strong>3€ / servicio</strong></p>
+                </div>
             </div>
         </div>
-
         <div class="cta-container">
-            <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-direct" target="_blank">Inscribir ahora</a>
+            <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-direct">Inscribir a mi hijo/a ahora</a>
         </div>
     </section>
 
     <div class="container">
-        <h2 class="section-title">Información Familias</h2>
+        <h2 class="section-title">Sobre el Campus</h2>
         <div class="info-box">
-            <p>Bienvenidos al Campus de la <strong>U.D. Jinámar</strong> y <strong>SM Academia</strong>. Nuestro objetivo es ofrecer un entorno seguro y profesional donde los niños mejoren su técnica individual con la Metodología MEC.</p>
+            <p>El <strong>Campus de Verano 2026</strong> une la historia de la <strong>U.D. Jinámar</strong> con la metodología de élite de <strong>SM Academia</strong>. Formación técnica superior bajo el sistema profesional MEC.</p>
         </div>
 
-        <div class="director-box">
-            <div class="director-text">
-                <h3>⚽ Dirección Técnica</h3>
-                <p>"Aseguramos una formación de calidad, titulada y centrada en el progreso real de cada alumno."</p>
-                <p><strong>Samy Martín</strong> (Director SM Academia)</p>
+        <div class="director-card">
+            <div class="director-header">
+                <h3>⚽ ¿Quién dirige el Campus?</h3>
+            </div>
+            <div class="director-content">
+                <p><strong>Hola, soy Samy, director de SM Academia. Mi trabajo este verano es asegurar que cada minuto de tu hijo en el campus sea de calidad.</strong></p>
+                
+                <h4>Mi formación técnica:</h4>
+                <ul>
+                    <li>Técnico y Coordinador Deportivo titulado por la Escuela Canaria de Entrenadores (FIFLP).</li>
+                    <li>Creador de la Metodología MEC (Motivación, Esfuerzo y Constancia).</li>
+                </ul>
+
+                <h4>Mi compromiso:</h4>
+                <p>No solo "echamos a rodar el balón". Aplicamos un sistema profesional donde el aprendizaje técnico y el respeto van de la mano. Como coordinador titulado, mi prioridad es la seguridad, la enseñanza real y que cada niño se sienta protagonista de su propia mejora.</p>
             </div>
         </div>
 
-        <h2 class="section-title">Horarios</h2>
+        <h2 class="section-title">Sesión Tipo (09:00 - 13:00)</h2>
         <table class="schedule-table">
             <thead>
-                <tr><th>Hora</th><th>Actividad</th></tr>
+                <tr>
+                    <th>Horario</th>
+                    <th>Actividad</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>09:00</td><td>Inicio y Activación</td></tr>
-                <tr><td>09:15</td><td>Tecnificación MEC</td></tr>
-                <tr><td>10:30</td><td>Desayuno Saludable</td></tr>
-                <tr><td>11:00</td><td>Táctica y Competición</td></tr>
-                <tr><td>13:00</td><td>Recogida</td></tr>
+                <tr><td>09:00 - 09:10</td><td><strong>Llegada:</strong> Recepción y activación.</td></tr>
+                <tr><td>09:10 - 10:30</td><td><strong>Tecnificación:</strong> Gesto técnico (Metodología MEC).</td></tr>
+                <tr><td>10:30 - 11:00</td><td><strong>Desayuno:</strong> Hidratación y charla de valores.</td></tr>
+                <tr><td>11:00 - 12:00</td><td><strong>Juegos Aplicados:</strong> Táctica grupal.</td></tr>
+                <tr><td>12:00 - 12:50</td><td><strong>Partido Final:</strong> Competición y juego limpio.</td></tr>
+                <tr><td>12:50 - 13:00</td><td><strong>Salida:</strong> Cierre y recogida segura.</td></tr>
             </tbody>
         </table>
     </div>
 
     <footer>
         <p><strong>U.D. JINÁMAR 1975 & SM ACADEMIA</strong></p>
-        <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.9;">
-            Tel: 680 29 03 33 | Email: udjinamar1975@gmail.com<br>
-            Estadio Pedro Miranda, Las Palmas.
+        <p style="font-size: 0.8rem; opacity: 0.9; margin-top: 0.5rem;">
+            Estadio Municipal Pedro Miranda, Jinámar.<br>
+            <strong>Tel:</strong> 680 29 03 33 | <strong>Email:</strong> udjinamar1975@gmail.com
         </p>
     </footer>
 
