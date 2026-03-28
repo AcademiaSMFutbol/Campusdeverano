@@ -32,9 +32,16 @@
         /* Presentación */
         .intro-box { background: var(--bg-light); padding: 2.5rem; border-radius: 20px; border-left: 5px solid var(--mec-yellow); margin-bottom: 3rem; }
         .intro-box p { margin-bottom: 1rem; font-size: 1.05rem; }
-        .coordinator-badge { display: flex; align-items: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #ddd; }
-        .coordinator-info h4 { color: var(--udj-navy); margin: 0; font-size: 1.1rem; }
-        .coordinator-info span { font-size: 0.85rem; color: #666; font-weight: 600; text-transform: uppercase; }
+
+        /* Sección Director (NUEVA) */
+        .director-card { background: #fff; border: 1px solid #eee; padding: 2.5rem; border-radius: 20px; margin-bottom: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .director-header { display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem; }
+        .director-header h3 { color: var(--udj-navy); font-size: 1.8rem; margin: 0; }
+        .director-content h4 { color: var(--udj-navy); margin: 1.5rem 0 0.5rem; font-size: 1.1rem; text-transform: uppercase; border-left: 3px solid var(--mec-yellow); padding-left: 10px; }
+        .director-content p { font-size: 1rem; color: #444; margin-bottom: 1rem; }
+        .director-content ul { list-style: none; padding-left: 5px; }
+        .director-content ul li { position: relative; padding-left: 25px; margin-bottom: 10px; }
+        .director-content ul li::before { content: '⚽'; position: absolute; left: 0; font-size: 0.9rem; }
 
         /* Tarifas */
         .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
@@ -76,12 +83,23 @@
         <div class="intro-box">
             <p>Bienvenido a las <strong>6 semanas</strong> más intensas del verano. El <strong>Campus de Verano 2026</strong>, una alianza estratégica entre la <strong>U.D. Jinámar</strong> y <strong>SM Academia</strong>, regresa para ofrecer una formación técnica superior bajo la innovadora <strong>Metodología MEC</strong>.</p>
             <p>Diseñado para potenciar el talento joven, nuestro programa equilibra la exigencia profesional con la transmisión de valores fundamentales, garantizando un crecimiento deportivo y personal inigualable.</p>
-            
-            <div class="coordinator-badge">
-                <div class="coordinator-info">
-                    <span>Dirección Técnica y Coordinación</span>
-                    <h4>Samy Martín</h4>
-                </div>
+        </div>
+
+        <div class="director-card">
+            <div class="director-header">
+                <h3>⚽ ¿Quién dirige el Campus?</h3>
+            </div>
+            <div class="director-content">
+                <p><em>"Hola, soy Samy, director de SM Academia. Mi trabajo este verano es asegurar que cada minuto de tu hijo en el campus sea de calidad."</em></p>
+                
+                <h4>Mi formación técnica:</h4>
+                <ul>
+                    <li>Técnico y Coordinador Deportivo titulado por la Escuela Canaria de Entrenadores (FIFLP).</li>
+                    <li>Creador de la Metodología MEC (Motivación, Esfuerzo y Constancia).</li>
+                </ul>
+
+                <h4>Mi compromiso:</h4>
+                <p>No solo "echamos a rodar el balón". Aplicamos un sistema profesional donde el aprendizaje técnico y el respeto van de la mano. Como coordinador titulado, mi prioridad es la seguridad, la enseñanza real y que cada niño se sienta protagonista de su propia mejora.</p>
             </div>
         </div>
 
