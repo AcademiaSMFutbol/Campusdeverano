@@ -28,12 +28,14 @@
             border-bottom: 5px solid var(--mec-yellow);
         }
 
-        .logo-container { margin-bottom: 1.5rem; }
+        .logo-container { margin-bottom: 1.5rem; display: flex; justify-content: center; }
         .logo-img { 
             width: 160px; 
             height: 160px; 
+            object-fit: contain;
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
             border: none;
+            display: block;
         }
 
         .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; line-height: 1.1; }
@@ -139,7 +141,7 @@
 
     <header class="hero">
         <div class="logo-container">
-            <embed src="https://drive.google.com/file/d/14bW3xgpxC7kc26N2BCDHyAUejkWBby8B/preview" class="logo-img">
+            <img src="https://drive.google.com/uc?export=view&id=14bW3xgpxC7kc26N2BCDHyAUejkWBby8B" alt="U.D. Jinámar" class="logo-img">
         </div>
         <h1>Campus Verano 2026<br><span>Entrena tu Éxito</span></h1>
         <p>6 Semanas de formación profesional en el Estadio Pedro Miranda</p>
@@ -184,13 +186,12 @@
         </div>
 
         <div class="cta-container">
-            <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-direct">Inscribir a mi hijo/a ahora</a>
+            <a href="https://forms.gle/oHGzuMKzVA1gvhkd6" class="btn-direct" target="_blank">Inscribir a mi hijo/a ahora</a>
             <p style="color: white; font-size: 0.8rem; margin-top: 1.5rem; opacity: 0.8;">* Inscripciones gestionadas por U.D. Jinámar & SM Academia</p>
         </div>
     </section>
 
     <div class="container">
-        
         <h2 class="section-title">Sobre el Campus</h2>
         <div class="info-box">
             <p>El <strong>Campus de Verano 2026</strong> une la historia de la <strong>U.D. Jinámar</strong> con la metodología de élite de <strong>SM Academia</strong>. Formación técnica superior bajo el sistema profesional MEC.</p>
